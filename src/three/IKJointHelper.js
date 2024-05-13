@@ -1,4 +1,4 @@
-import { BoxBufferGeometry, Vector3, CylinderGeometry, SphereBufferGeometry, Mesh, MeshStandardMaterial } from 'three';
+import { BoxGeometry, Vector3, CylinderGeometry, SphereGeometry, Mesh, MeshStandardMaterial } from 'three';
 import { Line2 } from 'three/examples/jsm/lines/Line2.js';
 import { IKLinkHelper } from './IKLinkHelper.js';
 import { DOF } from '../core/Joint.js';
@@ -103,12 +103,12 @@ export class IKJointHelper extends IKLinkHelper {
 		zRotationLimits.rotation.set( HALF_PI, 0, 0 );
 
 		const freeRotationMesh = new Mesh(
-			new SphereBufferGeometry( 0.05, 30, 30 ),
+			new SphereGeometry( 0.05, 30, 30 ),
 			new MeshStandardMaterial(),
 		);
 
 		const fixedMesh = new Mesh(
-			new BoxBufferGeometry( 0.05, 0.05, 0.05 ),
+			new BoxGeometry( 0.05, 0.05, 0.05 ),
 			new MeshStandardMaterial(),
 		);
 
